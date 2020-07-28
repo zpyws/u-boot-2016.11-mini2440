@@ -18,8 +18,8 @@
  * (easy to change)
  */
 #define CONFIG_S3C24X0		/* This is a SAMSUNG S3C24x0-type SoC */
-#define CONFIG_S3C2410		/* specifically a SAMSUNG S3C2410 SoC */
-#define CONFIG_SMDK2410		/* on a SAMSUNG SMDK2410 Board */
+#define CONFIG_S3C2440		/* specifically a SAMSUNG S3C2440 SoC */
+#define CONFIG_MINI2440		/* on a FriendlyARM MINI2440 Board */
 
 #define CONFIG_SYS_TEXT_BASE	0x0
 
@@ -154,8 +154,8 @@
  * NAND configuration
  */
 #ifdef CONFIG_CMD_NAND
-#define CONFIG_NAND_S3C2410
-#define CONFIG_SYS_S3C2410_NAND_HWECC
+#define CONFIG_NAND_S3C2440
+#define CONFIG_SYS_S3C2440_NAND_HWECC
 #define CONFIG_SYS_MAX_NAND_DEVICE	1
 #define CONFIG_SYS_NAND_BASE		0x4E000000
 #endif

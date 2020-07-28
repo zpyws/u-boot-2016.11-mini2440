@@ -5,5 +5,5 @@
 # SPDX-License-Identifier:	GPL-2.0+
 #
 
-obj-y	:= smdk2410.o
+obj-y	:= mini2440.o
 obj-y	+= lowlevel_init.o
