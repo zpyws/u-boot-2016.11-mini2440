@@ -246,6 +246,9 @@ ifeq ($(HOSTARCH),$(ARCH))
 CROSS_COMPILE ?=
 endif
 
+#by yangwensen@20200729
+CROSS_COMPILE  ?= /home/yws/app/mini2440/toolchain/4.4.3/bin/arm-none-linux-gnueabi-
+
 KCONFIG_CONFIG	?= .config
 export KCONFIG_CONFIG
 
