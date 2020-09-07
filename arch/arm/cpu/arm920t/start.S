@@ -82,6 +82,7 @@ copyex:
 	str	r1, [r0]
 # endif
 
+#if 0
 	/* FCLK:HCLK:PCLK = 1:4:8 */
 	/* default FCLK is 400 MHz ! */
 	ldr	r0, =CLKDIVN
@@ -108,6 +109,7 @@ copyex:
 	mrc p15,0,r0,c1,c0,0		//read control register
 	orr r0, r0, #(1<<12)
 	mcr p15,0,r0,c1,c0,0		//write it back
+#endif
 #endif	/* CONFIG_S3C24X0 */
 
 	/*
