@@ -91,8 +91,10 @@
 #define CONFIG_RESET_TO_RETRY
 
 #define CONFIG_NETMASK		255.255.255.0
-#define CONFIG_IPADDR		10.0.0.110
-#define CONFIG_SERVERIP		10.0.0.1
+#define CONFIG_IPADDR		192.168.1.111
+#define CONFIG_SERVERIP		192.168.1.3
+#define CONFIG_GATEWAYIP	192.168.1.1
+#define CONFIG_HOSTNAME		"mini2440"
 
 #if defined(CONFIG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200	/* speed to run kgdb serial port */
