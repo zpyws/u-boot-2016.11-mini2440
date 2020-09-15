@@ -131,12 +131,12 @@ lowlevel_init:
 /* the literal pools origin */
 
 SMRDATA:
-    .word 0x22000000		//BWSCON, DW7=32bits DW6=32bits
+    .word 0x22010000		//BWSCON, DW7=32bits DW6=32bits,DW4=16bits
     .word 0x00000700		//BANKCON0
     .word 0x00000700		//BANKCON1
     .word 0x00000700		//BANKCON2
     .word 0x00000700		//BANKCON3
-    .word 0x00000700		//BANKCON4
+    .word 0x00000740		//BANKCON4
     .word 0x00000700		//BANKCON5
     .word 0x00018005		//BANKCON6
     .word 0x00018005		//BANKCON7
