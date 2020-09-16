@@ -175,7 +175,9 @@
 /*
  * File system
  */
+#if 0
 #define CONFIG_CMD_UBIFS
+#endif
 #define CONFIG_CMD_MTDPARTS
 #define CONFIG_MTD_DEVICE
 #define CONFIG_MTD_PARTITIONS
