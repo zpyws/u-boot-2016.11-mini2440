@@ -60,7 +60,9 @@
 /************************************************************
  * RTC
  ************************************************************/
+#if 0
 #define CONFIG_RTC_S3C24X0
+#endif
 
 #define CONFIG_BAUDRATE		115200
 
@@ -76,7 +78,9 @@
  * Command line configuration.
  */
 #define CONFIG_CMD_BSP
+#if 0
 #define CONFIG_CMD_DATE
+#endif
 #define CONFIG_CMD_NAND
 #define CONFIG_CMD_REGINFO
 
