@@ -179,7 +179,9 @@
 #define CONFIG_CMD_MTDPARTS
 #define CONFIG_MTD_DEVICE
 #define CONFIG_MTD_PARTITIONS
+#if 0
 #define CONFIG_YAFFS2
+#endif
 #define CONFIG_RBTREE
 
 /* additions for new relocation code, must be added to all boards */
