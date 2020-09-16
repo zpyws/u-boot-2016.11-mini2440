@@ -35,11 +35,6 @@
 /*
  * Hardware drivers
  */
-#if 0
-#define CONFIG_CS8900		/* we have a CS8900 on-board */
-#define CONFIG_CS8900_BASE	0x19000300
-#define CONFIG_CS8900_BUS16	/* the Linux driver does accesses as shorts */
-#endif
 #define CONFIG_DRIVER_DM9000
 #define CONFIG_DM9000_BASE 0x20000000
 #define DM9000_IO CONFIG_DM9000_BASE
@@ -57,10 +52,11 @@
 /************************************************************
  * USB support (currently only works with D-cache off)
  ************************************************************/
+#if 0
 #define CONFIG_USB_OHCI
 #define CONFIG_USB_OHCI_S3C24XX
 #define CONFIG_DOS_PARTITION
-
+#endif
 /************************************************************
  * RTC
  ************************************************************/
