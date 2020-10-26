@@ -10,7 +10,7 @@
  */
 
 /* The DEBUG define must be before common to enable debugging */
-/*#define DEBUG*/
+//#define DEBUG
 
 #include <common.h>
 #include <asm/processor.h>
@@ -398,6 +398,24 @@ static const struct amd_flash_info jedec_table[] = {
 			ERASEINFO(0x02000, 2),
 			ERASEINFO(0x08000, 1),
 			ERASEINFO(0x10000, 7),
+		}
+	},
+#endif
+#ifdef CONFIG_SYS_FLASH_LEGACY_1Mx16		/* added by yangwensen@20201018 */
+	{
+		.mfr_id		= (u16)SST_MANUFACT,
+		.dev_id		= SST39VF1601,
+		.name		= "SST39VF1601",
+		.uaddr		= {
+//			[0] = MTD_UADDR_0x5555_0x2AAA,/* x8  */
+			[1] = MTD_UADDR_0x5555_0x2AAA /* x16 */
+		},
+		.DevSize	= SIZE_2MiB,
+		.CmdSet		= P_ID_AMD_STD,
+		.NumEraseRegions	= 2,
+		.regions		= {
+			ERASEINFO(4*1024, 256),
+			ERASEINFO(4*1024, 256),
 		}
 	},
 #endif
