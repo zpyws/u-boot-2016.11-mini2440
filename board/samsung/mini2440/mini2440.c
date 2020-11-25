@@ -110,7 +110,7 @@ int board_early_init_f(void)
 int board_init(void)
 {
 	/* arch number of mini2440-Board */
-	gd->bd->bi_arch_number = MACH_TYPE_S3C2440;		//by yangwensen@20200728
+	gd->bd->bi_arch_number = MACH_TYPE_MINI2440;		//by yangwensen@20201123
 
 	/* adress of boot parameters */
 	gd->bd->bi_boot_params = 0x30000100;
