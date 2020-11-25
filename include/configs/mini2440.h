@@ -96,6 +96,7 @@
 #define CONFIG_GATEWAYIP	192.168.1.1
 #define CONFIG_HOSTNAME		"mini2440"
 #define CONFIG_ETHADDR		D0:50:99:8E:66:F0
+#define CONFIG_BOOTARGS		"console=ttySAC0,115200 root=/dev/mtdblock3"
 
 #if defined(CONFIG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200	/* speed to run kgdb serial port */
