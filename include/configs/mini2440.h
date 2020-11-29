@@ -69,10 +69,12 @@
 /*
  * BOOTP options
  */
+#if 0
 #define CONFIG_BOOTP_BOOTFILESIZE
 #define CONFIG_BOOTP_BOOTPATH
 #define CONFIG_BOOTP_GATEWAY
 #define CONFIG_BOOTP_HOSTNAME
+#endif
 
 /*
  * Command line configuration.
