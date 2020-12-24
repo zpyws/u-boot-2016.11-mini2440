@@ -13,6 +13,10 @@
 #ifndef __CONFIG_H
 #define __CONFIG_H
 
+#if defined(CONFIG_SPL) && !defined(CONFIG_SPL_BUILD)
+	#define CONFIG_SKIP_LOWLEVEL_INIT
+#endif
+
 /*
  * High Level Configuration Options
  * (easy to change)
@@ -21,7 +25,11 @@
 #define CONFIG_S3C2440		/* specifically a SAMSUNG S3C2440 SoC */
 #define CONFIG_MINI2440		/* on a FriendlyARM MINI2440 Board */
 
-#define CONFIG_SYS_TEXT_BASE	0x0
+#if defined(CONFIG_SPL) && !defined(CONFIG_SPL_BUILD)
+	#define CONFIG_SYS_TEXT_BASE	0x30008000
+#else
+	#define CONFIG_SYS_TEXT_BASE	0x0
+#endif
 
 #define CONFIG_SYS_ARM_CACHE_WRITETHROUGH
 

@@ -247,7 +247,9 @@ CROSS_COMPILE ?=
 endif
 
 #by yangwensen@20200729
-CROSS_COMPILE  ?= /home/yws/app/mini2440/toolchain/4.4.3/bin/arm-none-linux-gnueabi-
+#CROSS_COMPILE  ?= /home/yws/app/mini2440/toolchain/4.4.3/bin/arm-none-linux-gnueabi-
+#CROSS_COMPILE  ?= /home/yws/code/mini2440/toolchain/gcc-4.6.4/bin/arm-none-linux-gnueabi-
+CROSS_COMPILE  ?= /home/yws/code/mini2440/toolchain/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
 
 KCONFIG_CONFIG	?= .config
 export KCONFIG_CONFIG

@@ -89,8 +89,12 @@ ENTRY(_main)
 	mov	r9, r0
 	bl	board_init_f_init_reserve
 
+#ifdef CONFIG_SPL_BUILD		//by yangwensen@20201221
+	bl mini2440_board_init_f
+#else
 	mov	r0, #0
 	bl	board_init_f
+#endif
 
 #if ! defined(CONFIG_SPL_BUILD)
 

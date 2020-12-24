@@ -7,3 +7,4 @@
 
 obj-y	:= mini2440.o
 obj-y	+= lowlevel_init.o
+obj-$(CONFIG_SPL_BUILD)	+= init.o
