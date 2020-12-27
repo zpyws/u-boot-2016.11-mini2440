@@ -126,9 +126,10 @@ int mymemcmp(const void* addr1, const void* addr2, unsigned int len)
 	return 0;
 }
 
-#define MINI2440_UBOOT_COPYTO  0x30008000    /* 拷贝到内存中的地址,此值与CONFIG_SYS_TEXT_BASE一致 */
-#define MINI2440_UBOOT_OFFSET  0x20000       /* u-boot在NAND中的偏移地址(NAND中的前128K存放的是u-boot-spl.bin) */
-#define MINI2440_UBOOT_SIZE    0xE0000       /* u-boot的大小896K，多拷贝点没关系 */
+//by yangwensen@20201225
+#define MINI2440_UBOOT_COPYTO  0x33f00000        /* 拷贝到内存中的地址,此值与CONFIG_SYS_TEXT_BASE一致,将其定在64MB内存的最高512KB*/
+#define MINI2440_UBOOT_OFFSET  (4*1024)          /* u-boot在NAND中的偏移地址(NAND中的前4KB存放的是u-boot-spl.bin) */
+#define MINI2440_UBOOT_SIZE    ((512-4)*1024)    /* u-boot的大小现在设定不得超过508K */
 
 void copy_uboot_to_sdram(void)
 {

@@ -26,7 +26,7 @@
 #define CONFIG_MINI2440		/* on a FriendlyARM MINI2440 Board */
 
 #if defined(CONFIG_SPL) && !defined(CONFIG_SPL_BUILD)
-	#define CONFIG_SYS_TEXT_BASE	0x30008000
+	#define CONFIG_SYS_TEXT_BASE	0x33f00000	//the top most 512KB of the 64MB sdram,最高512KB内存用于放uboot,by yangwensen@20201225
 #else
 	#define CONFIG_SYS_TEXT_BASE	0x0
 #endif
