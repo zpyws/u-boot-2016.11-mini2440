@@ -171,6 +171,11 @@
 #define CONFIG_ENV_SIZE					0x20000
 #define CONFIG_ENV_OVERWRITE
 
+
+/* by yangwensen */
+#define MTDIDS_DEFAULT    "nand0=nand"
+#define MTDPARTS_DEFAULT  "mtdparts=nand:512k(uboot),128k(env),2m(kernel),-(rootfs)"
+
 /*
  * Size of malloc() pool
  * BZIP2 / LZO / LZMA need a lot of RAM
