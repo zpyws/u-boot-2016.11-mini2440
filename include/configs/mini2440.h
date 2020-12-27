@@ -158,10 +158,17 @@
 #define CONFIG_SYS_FLASH_BANKS_LIST     { CONFIG_SYS_FLASH_BASE }
 #define CONFIG_SYS_MAX_FLASH_SECT	(512)
 
+#if 0
 #define CONFIG_ENV_ADDR			(CONFIG_SYS_FLASH_BASE + 0x070000)
 #define CONFIG_ENV_IS_IN_FLASH
 #define CONFIG_ENV_SIZE			0x10000
 /* allow to overwrite serial and ethaddr */
+#define CONFIG_ENV_OVERWRITE
+#endif
+/* by yangwensen */
+#define CONFIG_ENV_IS_IN_NAND
+#define CONFIG_ENV_OFFSET				0x80000
+#define CONFIG_ENV_SIZE					0x20000
 #define CONFIG_ENV_OVERWRITE
 
 /*
