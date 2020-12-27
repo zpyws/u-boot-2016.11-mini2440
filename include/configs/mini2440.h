@@ -107,6 +107,7 @@
 #define CONFIG_HOSTNAME		"mini2440"
 #define CONFIG_ETHADDR		D0:50:99:8E:66:F0
 #define CONFIG_BOOTARGS		"console=ttySAC0,115200 root=/dev/mtdblock3"
+#define CONFIG_BOOTCOMMAND	"nand read 30008000 kernel;bootm 30008000"
 
 #if defined(CONFIG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200	/* speed to run kgdb serial port */
@@ -174,7 +175,7 @@
 
 /* by yangwensen */
 #define MTDIDS_DEFAULT    "nand0=nand"
-#define MTDPARTS_DEFAULT  "mtdparts=nand:512k(uboot),128k(env),2m(kernel),-(rootfs)"
+#define MTDPARTS_DEFAULT  "mtdparts=nand:512k(uboot),128k(env),4m(kernel),-(rootfs)"
 
 /*
  * Size of malloc() pool
@@ -216,8 +217,8 @@
 #define CONFIG_MTD_PARTITIONS
 #if 0
 #define CONFIG_YAFFS2
-#endif
 #define CONFIG_RBTREE
+#endif
 
 /* additions for new relocation code, must be added to all boards */
 #define CONFIG_SYS_SDRAM_BASE	PHYS_SDRAM_1
