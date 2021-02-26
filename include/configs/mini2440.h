@@ -102,16 +102,40 @@
 
 #define CONFIG_NETMASK		255.255.255.0
 #define CONFIG_IPADDR		192.168.1.111
-#define CONFIG_SERVERIP		192.168.1.4
+#define CONFIG_SERVERIP		192.168.1.100
 #define CONFIG_GATEWAYIP	192.168.1.1
 #define CONFIG_HOSTNAME		"mini2440"
 #define CONFIG_ETHADDR		D0:50:99:8E:66:F0
 #define CONFIG_BOOTARGS		"console=ttySAC0,115200 root=/dev/mtdblock3"
-#define CONFIG_BOOTCOMMAND	"nand read 30008000 kernel;bootm 30008000"
+#define CONFIG_BOOTCOMMAND  "nand read ${kernel_addr} kernel;bootm ${kernel_addr}"
 
 #if defined(CONFIG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200	/* speed to run kgdb serial port */
 #endif
+
+/* by yangwensen */
+#define CONFIG_EXTRA_ENV_SETTINGS \
+	"netdev=eth0\0" \
+	"nandargs=setenv bootargs console=ttySAC0,115200 root=/dev/mtdblock3 \0" \
+	"nfsargs=setenv bootargs console=ttySAC0,115200 root=/dev/nfs rw " \
+		"nfsroot=${serverip}:${rootfspath}\0" \
+	"ramargs=setenv bootargs root=/dev/ram rw\0" \
+	"addip=setenv bootargs ${bootargs} " \
+		"ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}"  \
+		":${hostname}:${netdev}:off panic=1\0" \
+	"nfs_load_kernel=nfs ${kernel_addr} ${serverip}:${kernel_file_path}\0" \
+	"nand_load_kernel=nand read ${kernel_addr} kernel\0" \
+	"boot_rootfs_nfs=run nfsargs addip;boot\0" \
+	"boot_rootfs_nand=run nandargs;boot\0" \
+	"rootfspath=/home/yws/code/mini2440/code/rootfs/nfsroot/busybox-1.20.2-gcc4.4.3\0" \
+	"hostname=mini2440\0" \
+	"kernel_file_path=/home/yws/code/mini2440/code/linux/linux-5.10.2/arch/arm/boot/uImage\0" \
+	"fdt_addr=40040000\0" \
+	"kernel_addr=30008000\0" \
+	"ramdisk_addr=40200000\0" \
+	"u-boot=TQM862L/u-image.bin\0" \
+	"load=tftp 200000 ${u-boot}\0" \
+	""
 
 /*
  * Miscellaneous configurable options
